@@ -1,10 +1,27 @@
 # Research Paper
-Name:
-Semester:
-Topic:
-Link The Repository: 
+Name: Chase Coogan\
+Semester: Spring 2023\
+Topic: K-Nearest-Neighbor (KNN)\
+Link The Repository: [Chase Repo (may not link cause privage)](https://github.com/cwcoogan/CS5008-Research-Project)
 
 ## Introduction
+
+The algorithm that I chose to work with and explore is the K-Nearest-Neighbor (KNN) Algorithm. KNN is a classification algorithm that is used to make predictions based on a given input sample size. KNN classifies data based based upon the distance found between (x, y) values across the test data and the validation data. When the distance is found, using KNN we can predict the labels of the validation data to classify the newly input data. 
+
+KNN is widely used across many fields such as computer graphics, computer vision, image recognition & processing, healthcare and more. 
+
+KNN calculates the distance between two objects with the formula:
+
+
+![Euclidean Distance Formula]("images/CodeCogsEqn.png")
+
+
+
+
+
+
+
+
 - What is the algorithm/datastructure?
 - What is the problem it solves? 
 - Provide a brief history of the algorithm/datastructure. (make sure to cite sources)
