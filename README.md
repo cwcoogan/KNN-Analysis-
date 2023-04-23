@@ -66,10 +66,15 @@ Image showcases the highest K value occurs when the variance is the highest. As 
 
 KNN Algorithm follows a "majority_vote" method to calculate the predictions of the labels when multiple neighbors with difference labels are within the K range. KNN counts the number of similar labels within the K range and assigns a label based upon the similarity and distance between the neighbors to the validation data.
 
-**Sample Size: 10k**
+
+
+<div style="display:flex;">
+  <div style="flex:1; margin-right:10px;">
+    <strong>Sample Size: 10k</strong>
+    <br>
 
 | True Label | Prediction |
-|-------|------------|
+|:-------|:------------|
 |   5   |      6     |
 |   0   |      2     |
 |   4   |      7     |
@@ -78,10 +83,11 @@ KNN Algorithm follows a "majority_vote" method to calculate the predictions of t
 |   2   |      2     |
 |   1   |      1     |
 |   3   |      2     |
+  </div>
 
-
-
-**Sample Size: 30k**
+  <div style="flex:1; margin-right:10px;">
+    <strong>Sample Size: 30k</strong>
+    <br>
 
 | True Label | Prediction |
 |-------|------------|
@@ -93,9 +99,11 @@ KNN Algorithm follows a "majority_vote" method to calculate the predictions of t
 |   2   |      6     |
 |   1   |      3     |
 |   3   |      0     |
+  </div>
 
-
-**Sample Size: 50k**
+  <div style="flex:1;">
+    <strong>Sample Size: 50k</strong>
+    <br>
 
 | True Label | Prediction |
 |-------|------------|
@@ -107,6 +115,9 @@ KNN Algorithm follows a "majority_vote" method to calculate the predictions of t
 |   2   |      2     |
 |   1   |      3     |
 |   3   |      3     |
+  </div>
+</div>
+
 
 
 What we see is as the sample size increases from our training data, the predicted labels begin to become more accurate against their true labels. We can correlate this to the chart above showcasing the accuracy based on K. 
