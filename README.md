@@ -42,6 +42,7 @@ I found that as the number of test inputs increased, the Label predictions as we
 
 I found that as my sample sizes increases, my algorithm is able to predict higher accuracy. This is due to the test sample size increases, and using a validation set relative to it. In the KNN Algorithm the K value is most optimal where there is least margin for error. With a lower K value, the variance grows, opposed to when the K value is higher the variance falls off. The highest accuracy I found was when K = 3 at 96% accuracy shown below.
 
+<center><table>
 
 | K   | Sample Size: 10k | Sample Size: 30k | Sample Size: 50k |
 |:--- |:-------------|:-------------|:-------------|
@@ -57,10 +58,16 @@ I found that as my sample sizes increases, my algorithm is able to predict highe
 | 90  | 0.8810      | 0.9193      | 0.9302      |
 | 100 | 0.8760      | 0.9165      | 0.9278      |
 
+</table></center>
+
+
 
 Image showcases the highest K value occurs when the variance is the highest. As variance falls off, we can see the value of K's accuracy decrease.
 
+
+<center>
 <img src="KAccuracy.png" alt="kValue" width="400" height="300">
+</center>
 
 ## Label Predictions
 
