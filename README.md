@@ -38,16 +38,15 @@ I ran three different scenarios of my sample data to test the accuracy at larger
 
 I found that as the number of test inputs increased, the Label predictions as well as accuracy strongly increased. 
 
-## K Accuracy
+## K Accuracy vs. Sample Size
 
 I found that as my sample sizes increases, my algorithm is able to predict higher accuracy. This is due to the test sample size increases, and using a validation set relative to it. In the KNN Algorithm the K value is most optimal where there is least margin for error. With a lower K value, the variance grows, opposed to when the K value is higher the variance falls off. The highest accuracy I found was when K = 3 at 96% accuracy shown below.
 
 
 | Sample: 10k | Sample: 30k | Sample: 50k |
 |:--- |:--- |:--- |
-
 | K   | Accuracy % | K   | Accuracy % | K   | Accuracy % |
-|:--- |:-----------|:--- |:-----------|:--- |:-----------|
+|--- |-----------|--- |-----------|--- |-----------|
 | 0   | 0.9450     | 0   | 0.9567     | 0   | 0.9647     |
 | 10  | 0.9330     | 10  | 0.9492     | 10  | 0.9573     |
 | 20  | 0.9235     | 20  | 0.9447     | 20  | 0.9506     |
@@ -66,7 +65,7 @@ Image showcases the highest K value occurs when the variance is the highest. As 
 
 <img src="KAccuracy.png" alt="kValue" width="400" height="300">
 
-# Label Predictions
+## Label Predictions
 
 KNN Algorithm follows a "majority_vote" method to calculate the predictions of the labels when multiple neighbors with difference labels are within the K range. KNN counts the number of similar labels within the K range and assigns a label based upon the similarity and distance between the neighbors to the validation data.
 
@@ -119,6 +118,6 @@ ___
 
 ## Code Links
 
-* [KNN Algorithm]("../MNIST.ipynb")
-* [Images]("../images")
-* [Results]("../knn_results")
+* [KNN Algorithm](/MNIST.ipynb)
+* [Images](/images)
+* [Results](/knn_results)
