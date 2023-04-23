@@ -43,7 +43,7 @@ I found that as the number of test inputs increased, the Label predictions as we
 I found that as my sample sizes increases, my algorithm is able to predict higher accuracy. This is due to the test sample size increases, and using a validation set relative to it. In the KNN Algorithm the K value is most optimal where there is least margin for error. With a lower K value, the variance grows, opposed to when the K value is higher the variance falls off. The highest accuracy I found was when K = 3 at 96% accuracy shown below.
 
 
-| K   | Sample: 10k | Sample: 30k | Sample: 50k |
+| K   | Sample Size: 10k | Sample Size: 30k | Sample Size: 50k |
 |:--- |:-------------|:-------------|:-------------|
 | 0   | 0.9450      | 0.9567      | 0.9647      |
 | 10  | 0.9330      | 0.9492      | 0.9573      |
@@ -58,8 +58,6 @@ I found that as my sample sizes increases, my algorithm is able to predict highe
 | 100 | 0.8760      | 0.9165      | 0.9278      |
 
 
-<!-- ![kValue](KAccuracy.png) -->
-
 Image showcases the highest K value occurs when the variance is the highest. As variance falls off, we can see the value of K's accuracy decrease.
 
 <img src="KAccuracy.png" alt="kValue" width="400" height="300">
@@ -67,6 +65,53 @@ Image showcases the highest K value occurs when the variance is the highest. As 
 ## Label Predictions
 
 KNN Algorithm follows a "majority_vote" method to calculate the predictions of the labels when multiple neighbors with difference labels are within the K range. KNN counts the number of similar labels within the K range and assigns a label based upon the similarity and distance between the neighbors to the validation data.
+
+**Sample Size: 10k**
+
+| True Label | Prediction |
+|-------|------------|
+|   5   |      6     |
+|   0   |      2     |
+|   4   |      7     |
+|   1   |      4     |
+|   9   |      4     |
+|   2   |      2     |
+|   1   |      1     |
+|   3   |      2     |
+
+
+
+**Sample Size: 30k**
+
+| True Label | Prediction |
+|-------|------------|
+|   5   |      7     |
+|   0   |      3     |
+|   4   |      4     |
+|   1   |      1     |
+|   9   |      1     |
+|   2   |      6     |
+|   1   |      3     |
+|   3   |      0     |
+
+
+**Sample Size: 50k**
+
+| True Label | Prediction |
+|-------|------------|
+|   5   |      7     |
+|   0   |      3     |
+|   4   |      4     |
+|   1   |      1     |
+|   9   |      1     |
+|   2   |      2     |
+|   1   |      3     |
+|   3   |      3     |
+
+
+What we see is as the sample size increases from our training data, the predicted labels begin to become more accurate against their true labels. We can correlate this to the chart above showcasing the accuracy based on K. 
+
+
 
 ```Python
 # Majority Count Algorithm With the Predicted (Majority Vote) function
@@ -104,6 +149,25 @@ I used various different libraries to learn about KNN. Each of my imports can be
 
 KNN is an intricate algorithm that depends on the cleanliness of your data. There are many different ways to implement KNN or to speed it up using different distance calculations or different tree structures to store relevant distances. I found the Euclidean Distance formula to be the most accurate way to find true distance in the fastest complexity. I found this because, the sci-kit library uses KD-Tree's to organize data in k-dimensional space. In a KD-Tree the features are organized in a hierarchical structure which allows us to eliminate the search space for unlikely k-nearest-neighbors.
 
+
+Below shows how KNN data is selected for x_train and validation data:
+
+```Python
+# slice the data for the selected range of TRAINING data. (capped at 50k)
+x_testData = mnist.data[:50000]
+```
+
+```Python
+# Slice the data for the selected range of VALIDATION data. (cappted at 20k && must be smaller than TRAINING data)
+trainingData = mnist.data[50001:70001] 
+y_validation = mnist.target[50001:70001] 
+```
+
+```Python
+# Assign the VALIDATION data labels
+y_labelData = mnist.target[:50000] 
+```
+
 ___
 
 
@@ -112,6 +176,17 @@ ___
 As a result, I found that as K increases, the variance between accuracy rating drops off. I found that if we keep K constant, and change our sample data size and validation size, that the accuracy increases as there is more data to train with. The algorithm is efficient with a runtime of $O(n log n)$. As a result, I found that as the sample size increases and we check the predicted labels to their true labels, the error margin off false positives falls off, and we are left with more accurate predictions. This data can be found in the [knn_results](knn_results) folder.
 
 This research report taught me a lot about how KNN can be used to predict labels of unknown data. I had very little knowledge beforehand about Machine Learning, Modeling, Dataframes, or any form of modeling/training datasets. Through this, I learned a new ability to apply code to a different area to predict labels or values.
+
+___
+
+## How to Run:
+
+1. Clone the repository in your IDE
+2. Navigate to [knn](MNIST.ipynb)
+3. "Play" each code block starting from the imports
+4. Play around with different MNIST Data & Sample sizes (refer to notebook comments to change data ranges)
+5. Change K values around 
+6. Check text output files for results
 
 ___
 
