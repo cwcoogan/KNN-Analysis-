@@ -1,4 +1,5 @@
 # Research Paper
+![](https://img.shields.io/badge/CS5008-K--Nearest--Neighbor-blue) ![](https://img.shields.io/badge/Codestyle-Python-brightgreen)\
 Name: Chase Coogan\
 Semester: Spring 2023\
 Topic: K-Nearest-Neighbor (KNN)\
@@ -6,23 +7,39 @@ Link The Repository: [Chase Repo (may not link cause privage)](https://github.co
 
 ## Introduction
 
-The algorithm that I chose to work with and explore is the K-Nearest-Neighbor (KNN) Algorithm. KNN is a classification algorithm that is used to make predictions based on a given input sample size. KNN classifies data based based upon the distance found between (x, y) values across the test data and the validation data. When the distance is found, using KNN we can predict the labels of the validation data to classify the newly input data. 
+K-Nearest-Neighbor (KNN) is a supervised machine learning algorithm that is used in both classification and regression problems that relies on labeled data to predict outputs. In classification, KNN is used to predict the labels or classes for the newly input validation data based on similarity. In regression problems, KNN is used to predict real numbers or continous values for a given dataset. The difference between KNN in classification and regression is the output data. KNN is widely used across many fields such as computer graphics, computer vision, image recognition & processing, healthcare and more. 
 
-KNN is widely used across many fields such as computer graphics, computer vision, image recognition & processing, healthcare and more. 
+The KNN Algorithm believes that similar objects exist within a close proximity to one another. The way KNN predicts labels, or values is by sampling data and finding the K-Nearest-Neighbor. To do so in KNN, we must calculate the distance between the sample data and the validation data. We can use the distance to find the nearest Neighbor to the validation data, and with this given neighbor, we can test different "K" values to predict it's label and/or it's value. Choosing a K value is an art in itself. Typically, we start with K = 1, and then test different values. Common practices are dividing your labels in half and using the nearest half odd number. Another way is taking the square root of your validation data. Once, we have found our nearest neighbor(s), we run the algorithm on given "K" values, and predict the outcome by counting re-occuring labels or values. 
 
-KNN calculates the distance between two objects with the formula:
-
-
-![img](images/CodeCogsEqn.png)
-
-
-- What is the algorithm/datastructure?
-- What is the problem it solves? 
-- Provide a brief history of the algorithm/datastructure. (make sure to cite sources)
-- Provide an introduction to the rest of the paper. 
-
+The research I conducted on KNN uses the MNIST dataset, a widely popular open-source data set used to train models on hand-drawn images based on pixel values in computer vision to predict their true numerical value. This paper seeks to explore the difference in the Algorithm and it's accuracy as "K" changes, and explores how the output label predictions change as the sample and validation data changes. 
 
 ## Analysis of Algorithm/Datastructure
+
+The time complexity of KNN depends on the way the Algorithm is implemented. In my case, KNN ran at a time complexity of $O(n log n)$, and holds a space complexity of $O(n)$. To calculate the complexity, KNN considers the test dataset size, the number of features, and the distance. I used the Euclidean Distance formula to calculate the distance between my training data and my validation data with sklearns library. The Euclidean Distance formula is:
+
+$$\text{Euclidean Distance} = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$$ 
+
+Euclidean Distance found between my test data & my validation data. The purpose of calculating the distance is to locate the nearest Neighbor to the validation set. 
+``` Python
+distance = euclidean_distances(x_testData, trainingData)
+sorted_distance = np.argsort(distance, axis=1) 
+```
+
+
+## O(n^2) with euc distance O(nd) = number of data points in x-train and d = features
+# space O(n) k-d tree :P
+
+#### euc dist O(n log n) -> k-d tree 
+### n (validation)
+### m (x-train)
+### d (features) (784)
+### O(1) time complexity
+
+
+
+
+Time complexity: O(n * m * d)
+
 Make sure to include the following:
 - Time Complexity
 - Space Complexity
