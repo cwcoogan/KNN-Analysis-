@@ -65,9 +65,9 @@ I found that as my sample sizes increases, my algorithm is able to predict highe
 Image showcases the highest K value occurs when the variance is the highest. As variance falls off, we can see the value of K's accuracy decrease.
 
 
-<center>
-<img src="KAccuracy.png" alt="kValue" width="400" height="300">
-</center>
+<p align="center">
+  <img src="KAccuracy.png" alt="kValue" width="400" height="300">
+</p>
 
 ## Label Predictions
 
