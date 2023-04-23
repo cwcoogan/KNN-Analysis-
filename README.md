@@ -13,13 +13,7 @@ KNN is widely used across many fields such as computer graphics, computer vision
 KNN calculates the distance between two objects with the formula:
 
 
-![Euclidean Distance Formula]("images/CodeCogsEqn.png")
-
-
-
-
-
-
+![img](images/CodeCogsEqn.png)
 
 
 - What is the algorithm/datastructure?
