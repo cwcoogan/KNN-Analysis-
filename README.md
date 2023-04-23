@@ -66,12 +66,11 @@ Image showcases the highest K value occurs when the variance is the highest. As 
 
 KNN Algorithm follows a "majority_vote" method to calculate the predictions of the labels when multiple neighbors with difference labels are within the K range. KNN counts the number of similar labels within the K range and assigns a label based upon the similarity and distance between the neighbors to the validation data.
 
-
-
-<div style="display:flex;">
-  <div style="flex:1; margin-right:10px;">
-    <strong>Sample Size: 10k</strong>
-    <br>
+<center><table>
+<tr>
+<br>
+<td>
+<center><strong>Sample Size: 10k</strong></center>
 
 | True Label | Prediction |
 |:-------|:------------|
@@ -83,11 +82,11 @@ KNN Algorithm follows a "majority_vote" method to calculate the predictions of t
 |   2   |      2     |
 |   1   |      1     |
 |   3   |      2     |
-  </div>
+</td>
 
-  <div style="flex:1; margin-right:10px;">
-    <strong>Sample Size: 30k</strong>
-    <br>
+<br>
+<td>
+<center><strong>Sample Size: 30k</strong></center>
 
 | True Label | Prediction |
 |-------|------------|
@@ -99,11 +98,11 @@ KNN Algorithm follows a "majority_vote" method to calculate the predictions of t
 |   2   |      6     |
 |   1   |      3     |
 |   3   |      0     |
-  </div>
+</td>
 
-  <div style="flex:1;">
-    <strong>Sample Size: 50k</strong>
-    <br>
+<br>
+<td>
+<center><strong>Sample Size: 50k</strong></center>
 
 | True Label | Prediction |
 |-------|------------|
@@ -115,8 +114,10 @@ KNN Algorithm follows a "majority_vote" method to calculate the predictions of t
 |   2   |      2     |
 |   1   |      3     |
 |   3   |      3     |
-  </div>
-</div>
+</td>
+</tr>
+
+</table></center>
 
 
 
