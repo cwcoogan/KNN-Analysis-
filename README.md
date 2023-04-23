@@ -33,40 +33,92 @@ ___
 
 
 ## Empirical Analysis
-- What is the empirical analysis?
-- Provide specific examples / data.
 
+I ran three different scenarios of my sample data to test the accuracy at larger input sizes. The sizes I sampled were 10,000 training inputs and 5,000 validation, 30,000 training inputs and 20,000 validation, and 50,000 training inputs and 20,000 validation. I ran my K value from 1-50 to see the accuracy amongst each sample size.
+
+I found that as the number of test inputs increased, the Label predictions as well as accuracy strongly increased. 
+
+## K Accuracy
+
+I found that as my sample sizes increases, my algorithm is able to predict higher accuracy. This is due to the test sample size increases, and using a validation set relative to it. In the KNN Algorithm the K value is most optimal where there is least margin for error. With a lower K value, the variance grows, opposed to when the K value is higher the variance falls off. The highest accuracy I found was when K = 3 at 96% accuracy shown below.
+
+
+| Sample: 10k | Sample: 30k | Sample: 50k |
+|:--- |:--- |:--- |
+
+| K   | Accuracy % | K   | Accuracy % | K   | Accuracy % |
+|:--- |:-----------|:--- |:-----------|:--- |:-----------|
+| 0   | 0.9450     | 0   | 0.9567     | 0   | 0.9647     |
+| 10  | 0.9330     | 10  | 0.9492     | 10  | 0.9573     |
+| 20  | 0.9235     | 20  | 0.9447     | 20  | 0.9506     |
+| 30  | 0.9150     | 30  | 0.9397     | 30  | 0.9458     |
+| 40  | 0.9085     | 40  | 0.9347     | 40  | 0.9428     |
+| 50  | 0.9015     | 50  | 0.9333     | 50  | 0.9400     |
+| 60  | 0.8970     | 60  | 0.9298     | 60  | 0.9381     |
+| 70  | 0.8925     | 70  | 0.9258     | 70  | 0.9356     |
+| 80  | 0.8850     | 80  | 0.9222     | 80  | 0.9324     |
+| 90  | 0.8810     | 90  | 0.9193     | 90  | 0.9302     |
+| 100 | 0.8760     | 100 | 0.9165     | 100 | 0.9278     |
+
+<!-- ![kValue](KAccuracy.png) -->
+
+Image showcases the highest K value occurs when the variance is the highest. As variance falls off, we can see the value of K's accuracy decrease.
+
+<img src="KAccuracy.png" alt="kValue" width="400" height="300">
+
+# Label Predictions
+
+KNN Algorithm follows a "majority_vote" method to calculate the predictions of the labels when multiple neighbors with difference labels are within the K range. KNN counts the number of similar labels within the K range and assigns a label based upon the similarity and distance between the neighbors to the validation data.
+
+```Python
+# Majority Count Algorithm With the Predicted (Majority Vote) function
+def KNN(x, y, dist, k):
+  num_test = len(dist)
+  predicted_labels = []
+  for i in range(num_test):
+    neighbors = dist[i, :k] 
+    labels = y[neighbors]
+    p = predict(labels,k)
+    predicted_labels.append(p)
+  return predicted_labels
+
+def predict(nLabels, k):
+    unique_labels, counts = np.unique(nLabels, return_counts=True)
+    majority_label = unique_labels[np.argmax(counts)]  
+    return majority_label
+```
 
 ____
 
 
 ## Application
-- What is the algorithm/datastructure used for?
-- Provide specific examples
-- Why is it useful / used in that field area?
-- Make sure to provide sources for your information.
+
+K-Nearest-Neighbor is used for many different applications. Primarily, it is used in Machine Learning for solving classification or Regression problems. Some of the common areas where KNN is most relevant are in computer vision/graphics, and healthcare. In my example, I applied it to a classification model for labeling. KNN is a widely-used model that can be found in sentiment analysis, medical diagnosis, stock pricing, temperature predictions, and many more. 
 
 ___
 
 
 ## Implementation
-- What language did you use?
-- What libraries did you use?
-- What were the challenges you faced?
-- Provide key points of the algorithm/datastructure implementation, discuss the code.
-- If you found code in another language, and then implemented in your own language that is fine - but make sure to document that.
+
+I implemented KNN with the Python language. The challenges that I faced were making sure that my model was accurate as well as making sure the neighbors relevant to my distance were accurate. In KNN, the model needs to pull the index of the closest neighbor to the validation data and assign labels to them. This was the first time that I explored a Machine Learning Algorithm and were new to understanding how the model trains based on test data. To overcome this, I explored ways to validate the predicted validation labels against their true labels.
+
+I used various different libraries to learn about KNN. Each of my imports can be found at [KNN](MNIST.ipynb). The most relevant libraries included: sci-kit to import the MNIST data, and to use the Euclidean Distance function, numpy and pandas to take advantage of np arrays and dataframes. I used both matplotlib and seaborn for charting and visualizations.
+
+KNN is an intricate algorithm that depends on the cleanliness of your data. There are many different ways to implement KNN or to speed it up using different distance calculations or different tree structures to store relevant distances. I found the Euclidean Distance formula to be the most accurate way to find true distance in the fastest complexity. I found this because, the sci-kit library uses KD-Tree's to organize data in k-dimensional space. In a KD-Tree the features are organized in a hierarchical structure which allows us to eliminate the search space for unlikely k-nearest-neighbors.
 
 ___
 
 
 ## Summary
-- Provide a summary of your findings
-- What did you learn?
+
+As a result, I found that as K increases, the variance between accuracy rating drops off. I found that if we keep K constant, and change our sample data size and validation size, that the accuracy increases as there is more data to train with. The algorithm is efficient with a runtime of $O(n log n)$. As a result, I found that as the sample size increases and we check the predicted labels to their true labels, the error margin off false positives falls off, and we are left with more accurate predictions. This data can be found in the [knn_results](knn_results) folder.
+
+This research report taught me a lot about how KNN can be used to predict labels of unknown data. I had very little knowledge beforehand about Machine Learning, Modeling, Dataframes, or any form of modeling/training datasets. Through this, I learned a new ability to apply code to a different area to predict labels or values.
 
 ___
 
 ## Code Links
 
-* [KNN Algorithm]("MNIST.ipynb")
-* [Images]("images")
-* [Results]("knn_results")
+* [KNN Algorithm]("../MNIST.ipynb")
+* [Images]("../images")
+* [Results]("../knn_results")
