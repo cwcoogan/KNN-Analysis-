@@ -66,7 +66,7 @@ Image showcases the highest K value occurs when the variance is the highest. As 
 
 
 <p align="center">
-  <img src="KAccuracy.png" alt="kValue" width="400" height="300">
+  <img src="KAccuracy.png" alt="kValue" width="500" height="400">
 </p>
 
 ## Label Predictions
