@@ -3,7 +3,7 @@
 Name: Chase Coogan\
 Semester: Spring 2023\
 Topic: K-Nearest-Neighbor (KNN)\
-Link The Repository: [Chase Repo (may not link cause privage)](https://github.com/cwcoogan/CS5008-Research-Project)
+Link The Repository: [Chase Repo (may not link cause rep is private)](https://github.com/cwcoogan/CS5008-Research-Project)
 
 ## Introduction
 
@@ -11,7 +11,7 @@ K-Nearest-Neighbor (KNN) is a supervised machine learning algorithm that is used
 
 The KNN Algorithm believes that similar objects exist within a close proximity to one another. The way KNN predicts labels, or values is by sampling data and finding the K-Nearest-Neighbor. To do so in KNN, we must calculate the distance between the sample data and the validation data. We can use the distance to find the nearest Neighbor to the validation data, and with this given neighbor, we can test different "K" values to predict it's label and/or it's value. Choosing a K value is an art in itself. Typically, we start with K = 1, and then test different values. Common practices are dividing your labels in half and using the nearest half odd number. Another way is taking the square root of your validation data. Once, we have found our nearest neighbor(s), we run the algorithm on given "K" values, and predict the outcome by counting re-occuring labels or values. 
 
-The research I conducted on KNN uses the MNIST dataset, a widely popular open-source data set used to train models on hand-drawn images based on pixel values in computer vision to predict their true numerical value. This paper seeks to explore the difference in the Algorithm and it's accuracy as "K" changes, and explores how the output label predictions change as the sample and validation data changes. 
+The research I conducted on KNN uses the MNIST dataset, a widely popular open-source data set used to train models on hand-drawn images based on pixel values in computer vision to predict their true numerical value. This paper seeks to explore the difference in the Algorithm and it's accuracy as "K" changes, and explores how the output label predictions change as the sample and validation data changes.
 
 ## Analysis of Algorithm/Datastructure
 
@@ -19,31 +19,12 @@ The time complexity of KNN depends on the way the Algorithm is implemented. In m
 
 $$\text{Euclidean Distance} = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$$ 
 
-Euclidean Distance found between my test data & my validation data. The purpose of calculating the distance is to locate the nearest Neighbor to the validation set. 
+Calculating the distance is an important aspect of KNN as we need to use it to locate the distance between the training data & the validation data. I used numpy's argsort() function to sort by index to locate the closest neighbors to the validation data.
+
 ``` Python
 distance = euclidean_distances(x_testData, trainingData)
 sorted_distance = np.argsort(distance, axis=1) 
 ```
-
-
-## O(n^2) with euc distance O(nd) = number of data points in x-train and d = features
-# space O(n) k-d tree :P
-
-#### euc dist O(n log n) -> k-d tree 
-### n (validation)
-### m (x-train)
-### d (features) (784)
-### O(1) time complexity
-
-
-
-
-Time complexity: O(n * m * d)
-
-Make sure to include the following:
-- Time Complexity
-- Space Complexity
-- General analysis of the algorithm/datastructure
 
 ## Empirical Analysis
 - What is the empirical analysis?
