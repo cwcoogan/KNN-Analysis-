@@ -43,21 +43,20 @@ I found that as the number of test inputs increased, the Label predictions as we
 I found that as my sample sizes increases, my algorithm is able to predict higher accuracy. This is due to the test sample size increases, and using a validation set relative to it. In the KNN Algorithm the K value is most optimal where there is least margin for error. With a lower K value, the variance grows, opposed to when the K value is higher the variance falls off. The highest accuracy I found was when K = 3 at 96% accuracy shown below.
 
 
-| Sample: 10k | Sample: 30k | Sample: 50k |
-|:--- |:--- |:--- |
-| K   | Accuracy % | K   | Accuracy % | K   | Accuracy % |
-|--- |-----------|--- |-----------|--- |-----------|
-| 0   | 0.9450     | 0   | 0.9567     | 0   | 0.9647     |
-| 10  | 0.9330     | 10  | 0.9492     | 10  | 0.9573     |
-| 20  | 0.9235     | 20  | 0.9447     | 20  | 0.9506     |
-| 30  | 0.9150     | 30  | 0.9397     | 30  | 0.9458     |
-| 40  | 0.9085     | 40  | 0.9347     | 40  | 0.9428     |
-| 50  | 0.9015     | 50  | 0.9333     | 50  | 0.9400     |
-| 60  | 0.8970     | 60  | 0.9298     | 60  | 0.9381     |
-| 70  | 0.8925     | 70  | 0.9258     | 70  | 0.9356     |
-| 80  | 0.8850     | 80  | 0.9222     | 80  | 0.9324     |
-| 90  | 0.8810     | 90  | 0.9193     | 90  | 0.9302     |
-| 100 | 0.8760     | 100 | 0.9165     | 100 | 0.9278     |
+| K   | Sample: 10k | Sample: 30k | Sample: 50k |
+|:--- |:-------------|:-------------|:-------------|
+| 0   | 0.9450      | 0.9567      | 0.9647      |
+| 10  | 0.9330      | 0.9492      | 0.9573      |
+| 20  | 0.9235      | 0.9447      | 0.9506      |
+| 30  | 0.9150      | 0.9397      | 0.9458      |
+| 40  | 0.9085      | 0.9347      | 0.9428      |
+| 50  | 0.9015      | 0.9333      | 0.9400      |
+| 60  | 0.8970      | 0.9298      | 0.9381      |
+| 70  | 0.8925      | 0.9258      | 0.9356      |
+| 80  | 0.8850      | 0.9222      | 0.9324      |
+| 90  | 0.8810      | 0.9193      | 0.9302      |
+| 100 | 0.8760      | 0.9165      | 0.9278      |
+
 
 <!-- ![kValue](KAccuracy.png) -->
 
