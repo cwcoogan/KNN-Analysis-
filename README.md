@@ -66,7 +66,7 @@ The image below showcases the highest K value (output in groups of 10) occurs wh
 
 
 <p align="center">
-  <img src="KAccuracy.png" alt="kValue" width="500" height="400">
+  <img src="images/KAccuracy.png" alt="kValue" width="500" height="400">
 </p>
 
 ### Label Predictions
