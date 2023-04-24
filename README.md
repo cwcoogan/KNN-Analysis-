@@ -169,7 +169,7 @@ ___
 
 I implemented KNN with the Python language. The challenges that I faced were making sure that my model was accurate as well as making sure the neighbors relevant to my distance were accurate. In KNN, the model needs to pull the index of the closest neighbor to the validation data and assign labels to them. This was the first time that I explored a Machine Learning Algorithm and were new to understanding how the model trains based on test data. To overcome this, I explored ways to validate the predicted validation labels against their true labels.
 
-I used various different libraries to learn about KNN. Each of my imports can be found at [KNN](MNIST.ipynb). The most relevant libraries included: sci-kit to import the MNIST data, and to use the Euclidean Distance function, numpy and pandas to take advantage of np arrays and dataframes. I used both matplotlib and seaborn for charting and visualizations.
+I used various different libraries to learn about KNN. Each of my imports can be found at [KNN](knn.ipynb). The most relevant libraries included: sci-kit to import the MNIST data, and to use the Euclidean Distance function, numpy and pandas to take advantage of np arrays and dataframes. I used both matplotlib and seaborn for charting and visualizations.
 
 KNN is an intricate algorithm that depends on the cleanliness of your data. There are many different ways to implement KNN to speed up its time complexity using different distance calculations or different tree structures to store relevant distances. I found the Euclidean Distance formula to be the most accurate way to find true distance in the fastest complexity. I found this because the sci-kit library uses KD-Tree's to organize data in k-dimensional space. In a KD-Tree the features are organized in a hierarchical structure which allows us to eliminate the search space for unlikely k-nearest-neighbors. 
 
@@ -243,7 +243,7 @@ ___
 ## How To Run:
 
 1. Clone the repository in your IDE
-2. Navigate to [knn](MNIST.ipynb)
+2. Navigate to [knn](knn.ipynb)
 3. "Play" each code block starting from the imports
 4. Play around with different MNIST Data & Sample sizes (refer to notebook comments to change data ranges)
 5. Change K values around 
@@ -253,7 +253,7 @@ ___
 
 ## Code Links
 
-* [KNN Algorithm](/MNIST.ipynb)
+* [KNN Algorithm](knn.ipynb)
 * [Images](/images)
 * [Results](/knn_results)
 ___
