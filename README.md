@@ -34,7 +34,7 @@ ___
 
 ## Empirical Analysis
 
-The MNIST dataset consists of 50,000 hand-drawn 28x28 pixel images that represent a numerical value [0 to 9], along with 20,000 validation data to test against. My dataset's feature size is 784, which represents the square root of the pixel size. With 784 columns of individual pixels to compare each validation data against, the goal is to match pixel by pixel in terms of nearest neighbor to predict individual pixels until the KNN model can accurately say a given image represents a numerical value. The Labels in this research represent the numerical values [0 to 9].
+The MNIST dataset consists of 50,000 hand-drawn 28x28 pixel images that represent a numerical value [0 to 9], along with 20,000 validation data to test against. My dataset's feature size is 784, which represents the square of the number of pixels. With 784 columns of individual pixels to compare each validation data against, the goal is to match pixel by pixel in terms of nearest neighbor to predict individual pixels until the KNN model can accurately say a given image represents a numerical value. The Labels in this research represent the numerical values [0 to 9].
 
 I ran three different scenarios across my training data to test the accuracy as my input size increased. I ran my K value from 1-50 to see the accuracy amongst each K value as the test input size increased. The goal was to predict the validation data labels against their true labels. The sample sizes I used were:
 
@@ -270,4 +270,3 @@ Source: International Journal of Advanced Computer Science and Applications (IJA
 * https://towardsdatascience.com/machine-learning-basics-with-the-k-nearest-neighbors-algorithm-6a6e71d01761
 * https://medium.com/analytics-vidhya/a-beginners-guide-to-knn-and-mnist-handwritten-digits-recognition-using-knn-from-scratch-df6fb982748a
 * https://www.kdnuggets.com/2019/07/classifying-heart-disease-using-k-nearest-neighbors.html
-* 
